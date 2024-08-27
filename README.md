@@ -65,15 +65,14 @@ Usage
 
 Use the following command to stop the VPN server and client, and clean up:
 
-``` bash
+
 sudo ./teardown_vpn.sh  
 
-```
+
 
 Example Commands
 ----------------
 
-``` bash
 
 *   sudo ./setup\_vpn.sh SERVER 192.168.1.1
     
@@ -81,7 +80,7 @@ Example Commands
     
 *   sudo ./teardown\_vpn.sh
     
-```
+
 
 Security Considerations
 -----------------------
