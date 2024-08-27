@@ -58,11 +58,8 @@ Usage
 ### Stopping the VPN
 
 Use the following command to stop the VPN server and client, and clean up:
-
-
+```bash
 sudo ./teardown_vpn.sh  
-
-
 
 Example Commands
 ----------------
