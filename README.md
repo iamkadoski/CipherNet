@@ -34,9 +34,9 @@
     
 2.  **Verify the Files**:Ensure the following files are in the CipherNet directory:
 	
-    *   setup\_vpn.sh
+    *   setup_vpn.sh
         
-    *   teardown\_vpn.sh
+    *   teardown_vpn.sh
         
     *   vpn.c
         
@@ -50,9 +50,9 @@ Usage
 
 
   ``` bash
-   sudo ./setup\_vpn.sh SERVER <IPAddress> Replace with the IP address where you want the server to bind.
+   sudo ./setup_vpn.sh SERVER <IPAddress> Replace with the IP address where you want the server to bind.
     
-   sudo ./setup\_vpn.sh CLIENT <IPAddress> Replace with the IP address of the VPN server.
+   sudo ./setup_vpn.sh CLIENT <IPAddress> Replace with the IP address of the VPN server.
    ```
 
 ### Stopping the VPN
@@ -65,9 +65,9 @@ sudo ./teardown_vpn.sh
 Example Commands
 ----------------
 ```bash
-sudo ./setup\_vpn.sh SERVER 192.168.1.1    
-sudo ./setup\_vpn.sh CLIENT 192.168.1.1    
-sudo ./teardown\_vpn.sh
+sudo ./setup_vpn.sh SERVER 192.168.1.1    
+sudo ./setup_vpn.sh CLIENT 192.168.1.1    
+sudo ./teardown_vpn.sh
 ```   
 
 
