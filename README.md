@@ -2,7 +2,7 @@
 
 ## Overview
 
-**CipherNet** is a robust and lightweight VPN implementation designed to secure communications between multiple clients and a server. Leveraging a custom VPN interface (`tun0`), CipherNet encrypts data using the AES-256-CFB algorithm, ensuring that your network communications remain confidential and protected from prying eyes.
+**CipherNet** (A fork of Simple VPN) is a robust and lightweight VPN implementation designed to secure communications between multiple clients and a server. Leveraging a custom VPN interface (`tun0`), CipherNet encrypts data using the AES-256-CFB algorithm, ensuring that your network communications remain confidential and protected from prying eyes.
 
 ## Project Structure
 
@@ -30,15 +30,12 @@
    ```bash
    git clone <repository-url>
    cd CipherNet
- 
+
   gcc -o vpn vpn.c -lcrypto -lssl -pthread 
- 
-```
+  
     
 2.  **Verify the Files**:Ensure the following files are in the CipherNet directory:
 	
-  
- 
     *   setup\_vpn.sh
         
     *   teardown\_vpn.sh
@@ -55,11 +52,10 @@ Usage
 
 
   ``` bash
-   sudo ./setup\_vpn.sh SERVER Replace with the IP address where you want the server to bind.
+   sudo ./setup\_vpn.sh SERVER <IPAddress> Replace with the IP address where you want the server to bind.
     
-    bashCopy codesudo ./setup\_vpn.sh CLIENT Replace with the IP address of the VPN server.
-    
-  ```
+   sudo ./setup\_vpn.sh CLIENT <IPAddress> Replace with the IP address of the VPN server.
+   ```
 
 ### Stopping the VPN
 
