@@ -30,8 +30,9 @@
    ```bash
    git clone <repository-url>
    cd CipherNet
+   gcc -o vpn vpn.c -lcrypto -lssl -pthread 
 
-  gcc -o vpn vpn.c -lcrypto -lssl -pthread 
+  
   
     
 2.  **Verify the Files**:Ensure the following files are in the CipherNet directory:
