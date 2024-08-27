@@ -64,14 +64,11 @@ sudo ./teardown_vpn.sh
 
 Example Commands
 ----------------
-
-
-*   sudo ./setup\_vpn.sh SERVER 192.168.1.1
-    
-*   sudo ./setup\_vpn.sh CLIENT 192.168.1.1
-    
-*   sudo ./teardown\_vpn.sh
-    
+```bash
+sudo ./setup\_vpn.sh SERVER 192.168.1.1    
+sudo ./setup\_vpn.sh CLIENT 192.168.1.1    
+sudo ./teardown\_vpn.sh
+```   
 
 
 Security Considerations
