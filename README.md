@@ -92,7 +92,4 @@ Contributing
 
 If you find bugs or have suggestions for improvements, feel free to submit issues or pull requests on the project repository.
 
-License
--------
 
-This project is licensed under the MIT License.
