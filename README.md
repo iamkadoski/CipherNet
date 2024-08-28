@@ -30,7 +30,7 @@
    ```bash
    git clone https://github.com/iamkadoski/CipherNet.git
    cd CipherNet
-   gcc -o vpn vpn.c -lcrypto -lssl -pthread 
+   gcc -o <APP_NAME> ciphervpn.c -lcrypto -lssl -pthread 
     
 2.  **Verify the Files**:Ensure the following files are in the CipherNet directory:
 	
@@ -50,9 +50,9 @@ Usage
 
 
   ``` bash
-   sudo ./setup_vpn.sh SERVER <IPAddress> Replace with the IP address where you want the server to bind.
+   sudo ./setup_vpn.sh <APP_NAME> <SERVER|CLIENT> <AES_KEY> <SERVER_IP> 
     
-   sudo ./setup_vpn.sh CLIENT <IPAddress> Replace with the IP address of the VPN server.
+   sudo ./setup_vpn.sh <APP_NAME> CLIENT <AES_KEY> <SERVER_IP> 
    ```
 
 ### Stopping the VPN
@@ -65,8 +65,8 @@ sudo ./teardown_vpn.sh
 Example Commands
 ----------------
 ```bash
-sudo ./setup_vpn.sh SERVER 192.168.1.1    
-sudo ./setup_vpn.sh CLIENT 192.168.1.1    
+sudo ./setup_vpn.sh ciper SERVER mysecurekey1234567890 192.168.1.1    
+sudo ./setup_vpn.sh cipher CLIENT mysecurekey1234567890 192.168.1.1    
 sudo ./teardown_vpn.sh
 ```   
 
