@@ -28,7 +28,7 @@
 
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/iamkadoski/CipherNet.git
    cd CipherNet
    gcc -o vpn vpn.c -lcrypto -lssl -pthread 
     
