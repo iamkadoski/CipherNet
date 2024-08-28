@@ -29,7 +29,7 @@ elif [ "$MODE" == "CLIENT" ]; then
   SERVER_IP=$4
   ./$APP_NAME CLIENT $AES_KEY $SERVER_IP &
   CLIENT_PID=$!
-  echo "VPN client started with PID: $CLIENT_PID"
+  echo "VPN client started with PID: $CLIENT_PID connected to server: $SERVER_IP"
 
   # Check if the route exists before adding it
   ip route show | grep -q "^10.8.0.0/16" || ip route add 10.8.0.0/16 via $SERVER_IP
