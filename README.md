@@ -38,10 +38,9 @@
         
     *   teardown_vpn.sh
         
-    *   vpn.c
+    *   ciphervpn.c
         
-    *   vpn (If the vpn file is missing, compile vpn.c to generate it.)
-        
+          
 
 Usage
 -----
