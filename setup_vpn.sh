@@ -6,37 +6,37 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-# Check if the correct number of arguments is provided
-if [ "$#" -ne 2 ]; then
-  echo "Usage: $0 <SERVER|CLIENT> <IP_ADDRESS>"
+# Check if the required arguments are provided
+if [ $# -lt 3 ]; then
+  echo "Usage: $0 <APP_NAME> <SERVER|CLIENT> <AES_KEY> [SERVER_IP]"
   exit 1
 fi
 
-MODE="$1"
-IP_ADDRESS="$2"
+APP_NAME=$1
+MODE=$2
+AES_KEY=$3
 
-# Validate MODE argument
-if [ "$MODE" != "SERVER" ] && [ "$MODE" != "CLIENT" ]; then
-  echo "First argument must be either 'SERVER' or 'CLIENT'"
-  exit 1
-fi
-
-# Run the vpn_demo with the appropriate arguments
 if [ "$MODE" == "SERVER" ]; then
-  ./vpn_demo SERVER &
+  # Start the VPN server
+  ./$APP_NAME SERVER $AES_KEY &
   SERVER_PID=$!
   echo "VPN server started with PID: $SERVER_PID"
-  
-  # Wait for the server to start
-  sleep 5
 
 elif [ "$MODE" == "CLIENT" ]; then
-  ./vpn_demo CLIENT "$IP_ADDRESS" &
+  if [ $# -ne 4 ]; then
+    echo "Usage: $0 <APP_NAME> CLIENT <AES_KEY> <SERVER_IP>"
+    exit 1
+  fi
+  SERVER_IP=$4
+  # Start the VPN client
+  ./$APP_NAME CLIENT $AES_KEY $SERVER_IP &
   CLIENT_PID=$!
   echo "VPN client started with PID: $CLIENT_PID"
+
+else
+  echo "Invalid mode. Use 'SERVER' or 'CLIENT'."
+  exit 1
 fi
 
-# Keep the script running to monitor the processes
-wait $SERVER_PID
-wait $CLIENT_PID
-
+# Wait for the server/client to finish
+wait
